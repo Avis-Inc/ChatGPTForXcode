@@ -8,7 +8,7 @@
 import OpenAISwift
 
 struct ChatGPTClient {
-    func send(
+    static func send(
         authToken: String,
         chatMessages: [ChatMessage]
     ) async throws -> String {
