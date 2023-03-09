@@ -205,6 +205,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1C7E18C529B9E477004C94A0 /* PBXTargetDependency */,
 			);
 			name = ChatGPTForXcodeEditorExtension;
 			packageProductDependencies = (
@@ -243,6 +244,7 @@
 			mainGroup = 1CF0299529B8038E00989EF8;
 			packageReferences = (
 				C855FF5329B9A6F400D94C2E /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+				1C7E18C329B9E44A004C94A0 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = 1CF0299F29B8038E00989EF8 /* Products */;
 			projectDirPath = "";
@@ -297,6 +299,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1C7E18C529B9E477004C94A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 1C7E18C429B9E477004C94A0 /* SwiftLintPlugin */;
+		};
 		1CF029C229B8040100989EF8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 1CF029B329B8040100989EF8 /* ChatGPTForXcodeEditorExtension */;
@@ -429,7 +435,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatGPTForXcode/Preview Content\"";
-				DEVELOPMENT_TEAM = Y92YBVG897;
+				DEVELOPMENT_TEAM = 69BMRJXU5B;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -457,7 +463,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatGPTForXcode/Preview Content\"";
-				DEVELOPMENT_TEAM = Y92YBVG897;
+				DEVELOPMENT_TEAM = 69BMRJXU5B;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -481,7 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y92YBVG897;
+				DEVELOPMENT_TEAM = 69BMRJXU5B;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChatGPTForXcodeEditorExtension/Info.plist;
@@ -508,7 +514,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y92YBVG897;
+				DEVELOPMENT_TEAM = 69BMRJXU5B;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChatGPTForXcodeEditorExtension/Info.plist;
@@ -561,6 +567,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1C7E18C329B9E44A004C94A0 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		C855FF5329B9A6F400D94C2E /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
@@ -572,6 +586,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1C7E18C429B9E477004C94A0 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1C7E18C329B9E44A004C94A0 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
+		};
 		C855FF5429B9A6F400D94C2E /* OpenAISwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C855FF5329B9A6F400D94C2E /* XCRemoteSwiftPackageReference "OpenAISwift" */;
