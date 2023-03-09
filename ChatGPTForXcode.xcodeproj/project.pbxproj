@@ -16,6 +16,9 @@
 		1CF029BC29B8040100989EF8 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF029BB29B8040100989EF8 /* SourceEditorExtension.swift */; };
 		1CF029BE29B8040100989EF8 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF029BD29B8040100989EF8 /* SourceEditorCommand.swift */; };
 		1CF029C329B8040100989EF8 /* ChatGPTForXcodeEditorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1CF029B429B8040100989EF8 /* ChatGPTForXcodeEditorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C855FF0A29B99F8500D94C2E /* ChatGPTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */; };
+		C855FF5229B9A5A000D94C2E /* ChatGPTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */; };
+		C855FF5529B9A6F400D94C2E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = C855FF5429B9A6F400D94C2E /* OpenAISwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,7 @@
 		1CF029BD29B8040100989EF8 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		1CF029BF29B8040100989EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CF029C029B8040100989EF8 /* ChatGPTForXcodeEditorExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChatGPTForXcodeEditorExtension.entitlements; sourceTree = "<group>"; };
+		C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C855FF5529B9A6F400D94C2E /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,7 @@
 		1CF0299529B8038E00989EF8 = {
 			isa = PBXGroup;
 			children = (
+				C855FF4E29B9A53300D94C2E /* Shared */,
 				1CF029A029B8038E00989EF8 /* ChatGPTForXcode */,
 				1CF029BA29B8040100989EF8 /* ChatGPTForXcodeEditorExtension */,
 				1CF029B529B8040100989EF8 /* Frameworks */,
@@ -137,6 +143,30 @@
 			path = ChatGPTForXcodeEditorExtension;
 			sourceTree = "<group>";
 		};
+		C855FF0729B99F6800D94C2E /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				C855FF0829B99F7500D94C2E /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		C855FF0829B99F7500D94C2E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C855FF4E29B9A53300D94C2E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C855FF0729B99F6800D94C2E /* Infrastructure */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,6 +185,9 @@
 				1CF029C229B8040100989EF8 /* PBXTargetDependency */,
 			);
 			name = ChatGPTForXcode;
+			packageProductDependencies = (
+				C855FF5429B9A6F400D94C2E /* OpenAISwift */,
+			);
 			productName = ChatGPTForXcode;
 			productReference = 1CF0299E29B8038E00989EF8 /* ChatGPTForXcode.app */;
 			productType = "com.apple.product-type.application";
@@ -203,6 +236,9 @@
 				Base,
 			);
 			mainGroup = 1CF0299529B8038E00989EF8;
+			packageReferences = (
+				C855FF5329B9A6F400D94C2E /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = 1CF0299F29B8038E00989EF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -238,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF029A429B8038E00989EF8 /* ContentView.swift in Sources */,
+				C855FF5229B9A5A000D94C2E /* ChatGPTClient.swift in Sources */,
 				1CF029A229B8038E00989EF8 /* ChatGPTForXcodeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF029BC29B8040100989EF8 /* SourceEditorExtension.swift in Sources */,
+				C855FF0A29B99F8500D94C2E /* ChatGPTClient.swift in Sources */,
 				1CF029BE29B8040100989EF8 /* SourceEditorCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,7 +424,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatGPTForXcode/Preview Content\"";
-				DEVELOPMENT_TEAM = 69BMRJXU5B;
+				DEVELOPMENT_TEAM = Y92YBVG897;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -414,7 +452,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatGPTForXcode/Preview Content\"";
-				DEVELOPMENT_TEAM = 69BMRJXU5B;
+				DEVELOPMENT_TEAM = Y92YBVG897;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -438,7 +476,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 69BMRJXU5B;
+				DEVELOPMENT_TEAM = Y92YBVG897;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChatGPTForXcodeEditorExtension/Info.plist;
@@ -465,7 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 69BMRJXU5B;
+				DEVELOPMENT_TEAM = Y92YBVG897;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChatGPTForXcodeEditorExtension/Info.plist;
@@ -516,6 +554,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C855FF5329B9A6F400D94C2E /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C855FF5429B9A6F400D94C2E /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C855FF5329B9A6F400D94C2E /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1CF0299629B8038E00989EF8 /* Project object */;
 }
