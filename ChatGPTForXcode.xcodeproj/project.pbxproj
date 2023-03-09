@@ -19,6 +19,7 @@
 		C855FF0A29B99F8500D94C2E /* ChatGPTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */; };
 		C855FF5229B9A5A000D94C2E /* ChatGPTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */; };
 		C855FF5529B9A6F400D94C2E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = C855FF5429B9A6F400D94C2E /* OpenAISwift */; };
+		C855FF5729B9E05C00D94C2E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = C855FF5629B9E05C00D94C2E /* OpenAISwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CF029B729B8040100989EF8 /* Cocoa.framework in Frameworks */,
+				C855FF5729B9E05C00D94C2E /* OpenAISwift in Frameworks */,
 				1CF029B929B8040100989EF8 /* XcodeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +207,9 @@
 			dependencies = (
 			);
 			name = ChatGPTForXcodeEditorExtension;
+			packageProductDependencies = (
+				C855FF5629B9E05C00D94C2E /* OpenAISwift */,
+			);
 			productName = ChatGPTForXcodeEditorExtension;
 			productReference = 1CF029B429B8040100989EF8 /* ChatGPTForXcodeEditorExtension.appex */;
 			productType = "com.apple.product-type.xcode-extension";
@@ -568,6 +573,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		C855FF5429B9A6F400D94C2E /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C855FF5329B9A6F400D94C2E /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+		C855FF5629B9E05C00D94C2E /* OpenAISwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C855FF5329B9A6F400D94C2E /* XCRemoteSwiftPackageReference "OpenAISwift" */;
 			productName = OpenAISwift;
