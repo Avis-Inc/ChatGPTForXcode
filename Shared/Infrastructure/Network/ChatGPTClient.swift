@@ -13,22 +13,20 @@ struct ChatGPTClient {
     static func send(
         authToken: String,
         chatMessages: [ChatMessage]
-    ) async throws -> String {
+    ) async throws -> OpenAI<MessageResult> {
         let openAI = OpenAISwift(authToken: authToken)
-        let result = try await openAI.sendChat(
+        return try await openAI.sendChat(
             with: chatMessages,
             model: .chat(.chatgpt),
             maxTokens: 4096
         )
-
-        return result.choices.first?.message.content ?? ""
     }
 
     // MARK: Combine
     static func send(
         authToken: String,
         chatMessages: [ChatMessage]
-    ) -> AnyPublisher<String, OpenAIError> {
+    ) -> AnyPublisher<OpenAI<MessageResult>, OpenAIError> {
         Future { promise in
             let openAI = OpenAISwift(authToken: authToken)
             openAI.sendChat(
@@ -37,8 +35,8 @@ struct ChatGPTClient {
                 maxTokens: 4096
             ) { result in
                 switch result {
-                case let .success(message):
-                    promise(.success(message.choices.first?.message.content ?? ""))
+                case let .success(messageResult):
+                    promise(.success(messageResult))
                 case let .failure(error):
                     promise(.failure(error))
                 }
