@@ -18,7 +18,7 @@ struct ChatGPTClient {
         return try await openAI.sendChat(
             with: chatMessages,
             model: .chat(.chatgpt),
-            maxTokens: 4096
+            maxTokens: 300
         )
     }
 
@@ -32,7 +32,7 @@ struct ChatGPTClient {
             openAI.sendChat(
                 with: chatMessages,
                 model: .chat(.chatgpt),
-                maxTokens: 4096
+                maxTokens: 300
             ) { result in
                 switch result {
                 case let .success(messageResult):
@@ -54,7 +54,7 @@ struct ChatGPTClient {
         openAI.sendChat(
             with: chatMessages,
             model: .chat(.chatgpt),
-            maxTokens: 4096,
+            maxTokens: 300,
             completionHandler: completionHandler
         )
     }
