@@ -12,10 +12,11 @@
 		1CF029A629B8038F00989EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF029A529B8038F00989EF8 /* Assets.xcassets */; };
 		1CF029A929B8038F00989EF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF029A829B8038F00989EF8 /* Preview Assets.xcassets */; };
 		1CF029B729B8040100989EF8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF029B629B8040100989EF8 /* Cocoa.framework */; };
-		1CF029B929B8040100989EF8 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF029B829B8040100989EF8 /* XcodeKit.framework */; };
 		1CF029BC29B8040100989EF8 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF029BB29B8040100989EF8 /* SourceEditorExtension.swift */; };
 		1CF029BE29B8040100989EF8 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF029BD29B8040100989EF8 /* SourceEditorCommand.swift */; };
 		1CF029C329B8040100989EF8 /* ChatGPTForXcodeEditorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1CF029B429B8040100989EF8 /* ChatGPTForXcodeEditorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1CF1C45829C2EB5C0053EAA4 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF029B829B8040100989EF8 /* XcodeKit.framework */; };
+		1CF1C45929C2EB5C0053EAA4 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF029B829B8040100989EF8 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C855FF0A29B99F8500D94C2E /* ChatGPTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */; };
 		C855FF5229B9A5A000D94C2E /* ChatGPTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */; };
 		C855FF5529B9A6F400D94C2E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = C855FF5429B9A6F400D94C2E /* OpenAISwift */; };
@@ -42,6 +43,17 @@
 				1CF029C329B8040100989EF8 /* ChatGPTForXcodeEditorExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1CF1C45A29C2EB5C0053EAA4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1CF1C45929C2EB5C0053EAA4 /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -76,9 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CF1C45829C2EB5C0053EAA4 /* XcodeKit.framework in Frameworks */,
 				1CF029B729B8040100989EF8 /* Cocoa.framework in Frameworks */,
 				C855FF5729B9E05C00D94C2E /* OpenAISwift in Frameworks */,
-				1CF029B929B8040100989EF8 /* XcodeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +213,7 @@
 				1CF029B029B8040100989EF8 /* Sources */,
 				1CF029B129B8040100989EF8 /* Frameworks */,
 				1CF029B229B8040100989EF8 /* Resources */,
+				1CF1C45A29C2EB5C0053EAA4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
