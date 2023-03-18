@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct APIKeyInputView: View {
+struct ConfigurationView: View {
     private let apiKeyRepository = APIKeyRepository()
     
     @State private var apiKey = ""
@@ -31,7 +31,7 @@ struct APIKeyInputView: View {
     }
 }
 
-extension APIKeyInputView {
+extension ConfigurationView {
     private func headline(_ text: String) -> some View {
         Text(text)
             .font(.title2)
@@ -49,8 +49,8 @@ extension APIKeyInputView {
     }
 }
 
-struct APIKeyInputView_Previews: PreviewProvider {
+struct ConfigurationView_Previews: PreviewProvider {
     static var previews: some View {
-        APIKeyInputView()
+        ConfigurationView()
     }
 }

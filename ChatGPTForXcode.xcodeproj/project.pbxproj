@@ -19,7 +19,7 @@
 		C855FF5229B9A5A000D94C2E /* ChatGPTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */; };
 		C855FF5529B9A6F400D94C2E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = C855FF5429B9A6F400D94C2E /* OpenAISwift */; };
 		C855FF5729B9E05C00D94C2E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = C855FF5629B9E05C00D94C2E /* OpenAISwift */; };
-		C878303229C4351800473F28 /* APIKeyInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878303129C4351800473F28 /* APIKeyInputView.swift */; };
+		C878303229C4351800473F28 /* ConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878303129C4351800473F28 /* ConfigurationView.swift */; };
 		C878303529C4354300473F28 /* APIKeyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878303429C4354300473F28 /* APIKeyRepository.swift */; };
 		C878303629C4354E00473F28 /* APIKeyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878303429C4354300473F28 /* APIKeyRepository.swift */; };
 /* End PBXBuildFile section */
@@ -62,7 +62,7 @@
 		1CF029BF29B8040100989EF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CF029C029B8040100989EF8 /* ChatGPTForXcodeEditorExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChatGPTForXcodeEditorExtension.entitlements; sourceTree = "<group>"; };
 		C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTClient.swift; sourceTree = "<group>"; };
-		C878303129C4351800473F28 /* APIKeyInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyInputView.swift; sourceTree = "<group>"; };
+		C878303129C4351800473F28 /* ConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationView.swift; sourceTree = "<group>"; };
 		C878303429C4354300473F28 /* APIKeyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,7 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				1CF029A129B8038E00989EF8 /* ChatGPTForXcodeApp.swift */,
-				C878303129C4351800473F28 /* APIKeyInputView.swift */,
+				C878303129C4351800473F28 /* ConfigurationView.swift */,
 				1CF029A529B8038F00989EF8 /* Assets.xcassets */,
 				1CF029AA29B8038F00989EF8 /* ChatGPTForXcode.entitlements */,
 				1CF029A729B8038F00989EF8 /* Preview Content */,
@@ -293,7 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C855FF5229B9A5A000D94C2E /* ChatGPTClient.swift in Sources */,
-				C878303229C4351800473F28 /* APIKeyInputView.swift in Sources */,
+				C878303229C4351800473F28 /* ConfigurationView.swift in Sources */,
 				1CF029A229B8038E00989EF8 /* ChatGPTForXcodeApp.swift in Sources */,
 				C878303529C4354300473F28 /* APIKeyRepository.swift in Sources */,
 			);
