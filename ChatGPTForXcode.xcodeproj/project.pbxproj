@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C7BB74629C5A4CA006F1DE3 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BB74529C5A4CA006F1DE3 /* Language.swift */; };
+		1C7BB74929C5B3BA006F1DE3 /* LanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BB74829C5B3BA006F1DE3 /* LanguageRepository.swift */; };
 		1CF029A229B8038E00989EF8 /* ChatGPTForXcodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF029A129B8038E00989EF8 /* ChatGPTForXcodeApp.swift */; };
 		1CF029A629B8038F00989EF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF029A529B8038F00989EF8 /* Assets.xcassets */; };
 		1CF029A929B8038F00989EF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CF029A829B8038F00989EF8 /* Preview Assets.xcassets */; };
@@ -49,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C7BB74529C5A4CA006F1DE3 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		1C7BB74829C5B3BA006F1DE3 /* LanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRepository.swift; sourceTree = "<group>"; };
 		1CF0299E29B8038E00989EF8 /* ChatGPTForXcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatGPTForXcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CF029A129B8038E00989EF8 /* ChatGPTForXcodeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGPTForXcodeApp.swift; sourceTree = "<group>"; };
 		1CF029A529B8038F00989EF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -88,6 +92,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C7BB74429C5A470006F1DE3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				1C7BB74729C5A5B0006F1DE3 /* Entity */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		1C7BB74729C5A5B0006F1DE3 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				1C7BB74529C5A4CA006F1DE3 /* Language.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		1CF0299529B8038E00989EF8 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +188,7 @@
 		C855FF4E29B9A53300D94C2E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				1C7BB74429C5A470006F1DE3 /* Domain */,
 				C855FF0729B99F6800D94C2E /* Infrastructure */,
 			);
 			path = Shared;
@@ -177,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				C878303429C4354300473F28 /* APIKeyRepository.swift */,
+				1C7BB74829C5B3BA006F1DE3 /* LanguageRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -293,7 +315,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C855FF5229B9A5A000D94C2E /* ChatGPTClient.swift in Sources */,
+				1C7BB74629C5A4CA006F1DE3 /* Language.swift in Sources */,
 				C878303229C4351800473F28 /* APIKeyInputView.swift in Sources */,
+				1C7BB74929C5B3BA006F1DE3 /* LanguageRepository.swift in Sources */,
 				1CF029A229B8038E00989EF8 /* ChatGPTForXcodeApp.swift in Sources */,
 				C878303529C4354300473F28 /* APIKeyRepository.swift in Sources */,
 			);
@@ -449,7 +473,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatGPTForXcode/Preview Content\"";
-				DEVELOPMENT_TEAM = Y92YBVG897;
+				DEVELOPMENT_TEAM = 69BMRJXU5B;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -477,7 +501,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ChatGPTForXcode/Preview Content\"";
-				DEVELOPMENT_TEAM = Y92YBVG897;
+				DEVELOPMENT_TEAM = 69BMRJXU5B;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -501,7 +525,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y92YBVG897;
+				DEVELOPMENT_TEAM = 69BMRJXU5B;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChatGPTForXcodeEditorExtension/Info.plist;
@@ -528,7 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y92YBVG897;
+				DEVELOPMENT_TEAM = 69BMRJXU5B;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChatGPTForXcodeEditorExtension/Info.plist;
