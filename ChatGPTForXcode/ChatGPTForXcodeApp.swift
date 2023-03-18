@@ -14,5 +14,6 @@ struct ChatGPTForXcodeApp: App {
         WindowGroup {
             APIKeyInputView()
         }
+        .windowResizability(.contentSize)
     }
 }

@@ -13,19 +13,17 @@ struct APIKeyInputView: View {
     @State private var apiKey = ""
     
     var body: some View {
-        VStack(spacing: 20) {
-            VStack(spacing: 10) {
-                headline("1. Get your API Key from OpenAI.")
-                link()
-            }
+        VStack(spacing: 10) {
+            headline("1. Get your API Key from OpenAI.")
             
-            VStack(spacing: 10) {
-                headline("2. Enter your API Key.")
-                TextField("sk-...", text: $apiKey)
-            }
+            link()
+            
+            headline("2. Enter your API Key.")
+            
+            TextField("sk-...", text: $apiKey)
         }
-        .padding()
-        .frame(width: 400, height: 400, alignment: .center)
+        .frame(width: 360)
+        .frame(width: 440, height: 400)
         .onAppear {
             apiKey = apiKeyRepository.getApiKey()
         }
