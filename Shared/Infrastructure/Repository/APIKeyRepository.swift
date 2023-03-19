@@ -8,16 +8,18 @@
 import Foundation
 
 struct APIKeyRepository {
+    private let groupID = "com.ChatGPTForXcode.UserDefaults"
+
     private let key = "apiKey"
 
-    private let userDefaults = UserDefaults.standard
+    private let userDefaults = UserDefaults(suiteName: groupID)
 
-    func getApiKey() -> String {
+    func getAPIKey() -> String {
         let apiKey = userDefaults.string(forKey: key)
         return apiKey ?? ""
     }
 
-    func saveApiKey(apiKey: String) {
+    func saveAPIKey(apiKey: String) {
         userDefaults.set(apiKey, forKey: key)
     }
 }
