@@ -49,7 +49,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
 
             let languageRepository = LanguageRepository()
 
-            let authToken = apiKeyRepository.getApiKey()
+            let authToken = apiKeyRepository.getAPIKey()
 
             let language = languageRepository.getSelectedLanguage()
 

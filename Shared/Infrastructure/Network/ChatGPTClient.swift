@@ -5,10 +5,9 @@
 //  Created by 安部翔太 on 2023/03/09.
 //
 
-import Combine
 import OpenAISwift
 
-public struct ChatGPTClient {
+public enum ChatGPTClient {
     static func send(
         authToken: String,
         chatMessages: [ChatMessage]

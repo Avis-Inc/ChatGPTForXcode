@@ -219,4 +219,4 @@ extension Language {
     var prompt: String { "Please write in \(rawValue) language." }
 }
 
-public extension Language: CaseIterable {}
+extension Language: CaseIterable {}
