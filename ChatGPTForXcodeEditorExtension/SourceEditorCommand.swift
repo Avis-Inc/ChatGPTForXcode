@@ -40,9 +40,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                 .joined()
 
             let indentCount = lines
-                .first { _ in
-                    code.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-                }
+                .first { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
                 .map { $0.prefix(while: { $0 == " " }).count } ?? 0
 
             let apiKeyRepository = APIKeyRepository()
@@ -53,22 +51,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
 
             let language = languageRepository.getSelectedLanguage()
 
-            let content = """
-            You are the Tech Lead Engineer for iOS.
-            The output should meet the following constraints
-            - Keep sentences short.
-            - Limit the output to a maximum of three items.
-            - Format the output as a list.
-            - Don't mention if you're unsure of any issues.
-            - Output only "LGTM" if there are no issues.
-            - Indicate the specific area if there is an issue.
-
-            ```
-            \(code)
-            ```
-
-            \(language.prompt)
-            """
+            let content = Prompt.review(code, language: language)
 
             do {
                 let messageResult = try await ChatGPTClient.send(
