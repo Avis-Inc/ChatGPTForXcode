@@ -25,6 +25,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             }
 
             let lines = (selection.start.line ... selection.end.line)
+                .filter({ $0 <  buffer.lines.count })
                 .compactMap { buffer.lines[$0] as? String }
 
             let code = lines.enumerated()
