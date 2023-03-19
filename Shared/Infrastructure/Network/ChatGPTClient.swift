@@ -7,18 +7,16 @@
 
 import OpenAISwift
 
-struct ChatGPTClient {
+public enum ChatGPTClient {
     static func send(
         authToken: String,
         chatMessages: [ChatMessage]
-    ) async throws -> String {
+    ) async throws -> OpenAI<MessageResult> {
         let openAI = OpenAISwift(authToken: authToken)
-        let result = try await openAI.sendChat(
+        return try await openAI.sendChat(
             with: chatMessages,
             model: .chat(.chatgpt),
-            maxTokens: 4096
+            maxTokens: 300
         )
-        
-        return result.choices.first?.message.content ?? ""
     }
 }

@@ -11,7 +11,7 @@
 
 import Foundation
 
-enum Language: String {
+public enum Language: String {
     case somali = "Somali"
     case afrikaans = "Afrikaans"
     case azerbaijani = "Azerbaijani"
@@ -29,8 +29,8 @@ enum Language: String {
     case german = "German"
     case estonian = "Estonian"
     case english = "English"
-    case english_uk = "English (UK)"
-    case english_us = "English (US)"
+    case englishUK = "English (UK)"
+    case englishUS = "English (US)"
     case spanish = "Spanish"
     case esperanto = "Esperanto"
     case basque = "Basque"
@@ -132,8 +132,8 @@ extension Language {
         case .german: return "Deutsch"
         case .estonian: return "Eesti keel"
         case .english: return "English"
-        case .english_uk: return "English (UK)"
-        case .english_us: return "English (US)"
+        case .englishUK: return "English (UK)"
+        case .englishUS: return "English (US)"
         case .spanish: return "Español"
         case .esperanto: return "Esperanto"
         case .basque: return "Euskara"
@@ -215,6 +215,8 @@ extension Language {
         case .japanese: return "日本語"
         }
     }
+
+    var prompt: String { "Please write in \(rawValue) language." }
 }
 
 extension Language: CaseIterable {}

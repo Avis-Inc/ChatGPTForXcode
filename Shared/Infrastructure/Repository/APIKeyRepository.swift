@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct APIKeyRepository {
+public struct APIKeyRepository {
     private let key = "apiKey"
 
     private let userDefaults = UserDefaults(suiteName: "com.ChatGPTForXcode.UserDefaults")

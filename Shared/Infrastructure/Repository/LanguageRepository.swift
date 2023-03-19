@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LanguageRepository {
+public struct LanguageRepository {
     private let key = "language"
 
     private let userDefaults = UserDefaults(suiteName: "com.ChatGPTForXcode.UserDefaults")
