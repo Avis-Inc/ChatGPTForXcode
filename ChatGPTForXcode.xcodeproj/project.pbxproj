@@ -68,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		1C4A26D229C71492003384EA /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
+		1C4A26DE29C74B7F003384EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1C7BB74529C5A4CA006F1DE3 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		1C7BB74829C5B3BA006F1DE3 /* LanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRepository.swift; sourceTree = "<group>"; };
 		1CF0299E29B8038E00989EF8 /* ChatGPTForXcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatGPTForXcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +150,7 @@
 		1CF029A029B8038E00989EF8 /* ChatGPTForXcode */ = {
 			isa = PBXGroup;
 			children = (
+				1C4A26DE29C74B7F003384EA /* Info.plist */,
 				1CF029A129B8038E00989EF8 /* ChatGPTForXcodeApp.swift */,
 				C878303129C4351800473F28 /* ConfigurationView.swift */,
 				1CF029A529B8038F00989EF8 /* Assets.xcassets */,
@@ -500,6 +502,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChatGPTForXcode/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,6 +531,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChatGPTForXcode/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
