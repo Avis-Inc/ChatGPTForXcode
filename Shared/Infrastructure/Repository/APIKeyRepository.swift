@@ -8,13 +8,16 @@
 import Foundation
 
 struct APIKeyRepository {
-    private let apiKeyKey = "apiKey"
+    private let key = "apiKey"
+
     private let userDefaults = UserDefaults.standard
+
     func getApiKey() -> String {
-        let apiKey = userDefaults.string(forKey: apiKeyKey)
+        let apiKey = userDefaults.string(forKey: key)
         return apiKey ?? ""
     }
+
     func saveApiKey(apiKey: String) {
-        userDefaults.set(apiKey, forKey: apiKeyKey)
+        userDefaults.set(apiKey, forKey: key)
     }
 }
