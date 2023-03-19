@@ -12,7 +12,8 @@ import SwiftUI
 struct ChatGPTForXcodeApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ConfigurationView()
         }
+        .windowResizability(.contentSize)
     }
 }
