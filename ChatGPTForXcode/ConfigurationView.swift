@@ -34,10 +34,10 @@ struct ConfigurationView: View {
             .padding(.init(top: 25, leading: 25, bottom: 25, trailing: 28))
             .frame(width: 400, height: 230, alignment: .center)
             .onAppear {
-                apiKey = apiKeyRepository.getApiKey()
+                apiKey = apiKeyRepository.getAPIKey()
                 selectedLanguage = languageRepository.getSelectedLanguage()
             }
-            .onChange(of: apiKey, perform: apiKeyRepository.saveApiKey(apiKey:))
+            .onChange(of: apiKey, perform: apiKeyRepository.saveAPIKey(apiKey:))
             .onChange(of: selectedLanguage, perform: languageRepository.saveSelectedLanguage(language:))
             .navigationTitle("ChatGPT for Xcode")
             .toolbar {
