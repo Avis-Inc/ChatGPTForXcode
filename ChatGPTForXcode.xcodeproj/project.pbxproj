@@ -18,6 +18,8 @@
 		1CF029C329B8040100989EF8 /* ChatGPTForXcodeEditorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1CF029B429B8040100989EF8 /* ChatGPTForXcodeEditorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1CF1C45829C2EB5C0053EAA4 /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF029B829B8040100989EF8 /* XcodeKit.framework */; };
 		1CF1C45929C2EB5C0053EAA4 /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF029B829B8040100989EF8 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1CFBBD5C29C6E88200777355 /* LanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BB74829C5B3BA006F1DE3 /* LanguageRepository.swift */; };
+		1CFBBD5D29C6E8A100777355 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BB74529C5A4CA006F1DE3 /* Language.swift */; };
 		C855FF0A29B99F8500D94C2E /* ChatGPTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */; };
 		C855FF5229B9A5A000D94C2E /* ChatGPTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C855FF0929B99F8500D94C2E /* ChatGPTClient.swift */; };
 		C855FF5529B9A6F400D94C2E /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = C855FF5429B9A6F400D94C2E /* OpenAISwift */; };
@@ -343,7 +345,9 @@
 				C878303629C4354E00473F28 /* APIKeyRepository.swift in Sources */,
 				1CF029BC29B8040100989EF8 /* SourceEditorExtension.swift in Sources */,
 				C855FF0A29B99F8500D94C2E /* ChatGPTClient.swift in Sources */,
+				1CFBBD5D29C6E8A100777355 /* Language.swift in Sources */,
 				1CF029BE29B8040100989EF8 /* SourceEditorCommand.swift in Sources */,
+				1CFBBD5C29C6E88200777355 /* LanguageRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
