@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C4A26D329C71492003384EA /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A26D229C71492003384EA /* Prompt.swift */; };
+		1C4A26D429C71492003384EA /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4A26D229C71492003384EA /* Prompt.swift */; };
 		1C7BB74629C5A4CA006F1DE3 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BB74529C5A4CA006F1DE3 /* Language.swift */; };
 		1C7BB74929C5B3BA006F1DE3 /* LanguageRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7BB74829C5B3BA006F1DE3 /* LanguageRepository.swift */; };
 		1CF029A229B8038E00989EF8 /* ChatGPTForXcodeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF029A129B8038E00989EF8 /* ChatGPTForXcodeApp.swift */; };
@@ -65,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1C4A26D229C71492003384EA /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
 		1C7BB74529C5A4CA006F1DE3 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		1C7BB74829C5B3BA006F1DE3 /* LanguageRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageRepository.swift; sourceTree = "<group>"; };
 		1CF0299E29B8038E00989EF8 /* ChatGPTForXcode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatGPTForXcode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				1C7BB74529C5A4CA006F1DE3 /* Language.swift */,
+				1C4A26D229C71492003384EA /* Prompt.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -330,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C855FF5229B9A5A000D94C2E /* ChatGPTClient.swift in Sources */,
+				1C4A26D329C71492003384EA /* Prompt.swift in Sources */,
 				1C7BB74629C5A4CA006F1DE3 /* Language.swift in Sources */,
 				1C7BB74929C5B3BA006F1DE3 /* LanguageRepository.swift in Sources */,
 				C878303229C4351800473F28 /* ConfigurationView.swift in Sources */,
@@ -343,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C878303629C4354E00473F28 /* APIKeyRepository.swift in Sources */,
+				1C4A26D429C71492003384EA /* Prompt.swift in Sources */,
 				1CF029BC29B8040100989EF8 /* SourceEditorExtension.swift in Sources */,
 				C855FF0A29B99F8500D94C2E /* ChatGPTClient.swift in Sources */,
 				1CFBBD5D29C6E8A100777355 /* Language.swift in Sources */,
