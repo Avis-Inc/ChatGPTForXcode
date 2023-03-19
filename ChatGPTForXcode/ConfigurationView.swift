@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct PreferencesView: View {
+struct ConfigurationView: View {
     private let apiKeyRepository = APIKeyRepository()
+
     private let languageRepository = LanguageRepository()
 
     @State private var apiKey = ""
@@ -30,7 +31,7 @@ struct PreferencesView: View {
 
                 languagePicker()
             }
-            .padding(.init(top: 25, leading: 25, bottom: 25, trailing: 27))
+            .padding(.init(top: 25, leading: 25, bottom: 25, trailing: 28))
             .frame(width: 400, height: 230, alignment: .center)
             .onAppear {
                 apiKey = apiKeyRepository.getApiKey()
@@ -46,7 +47,7 @@ struct PreferencesView: View {
     }
 }
 
-extension PreferencesView {
+extension ConfigurationView {
     private func headline(_ text: String) -> some View {
         Text(text)
             .font(.title2)
@@ -88,8 +89,8 @@ extension PreferencesView {
     }
 }
 
-struct PreferencesView_Previews: PreviewProvider {
+struct ConfigurationView_Previews: PreviewProvider {
     static var previews: some View {
-        PreferencesView()
+        ConfigurationView()
     }
 }
