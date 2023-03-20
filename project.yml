@@ -137,6 +137,3 @@ packages:
   OpenAISwift:
     url: https://github.com/adamrushy/OpenAISwift
     from: 1.0.0
-  SwiftLint:
-    url: https://github.com/realm/SwiftLint
-    branch: main
