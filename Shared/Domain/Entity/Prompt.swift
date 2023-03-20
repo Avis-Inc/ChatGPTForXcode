@@ -30,6 +30,14 @@ public enum Prompt {
 
     static func refactor(_ code: String, language: Language) -> String {
         """
+        You are the Tech Lead Engineer for iOS.
+        Refactor the given code.
+
+        ```
+        \(code)
+        ```
+
+        \(language.prompt)
         """
     }
 }
