@@ -1,15 +1,15 @@
 //
-//  ReviewCommand.swift
+//  RefactorCommand.swift
 //  ChatGPTForXcodeEditorExtension
-//
-//  Created by TAISHIN MIYAMOTO on 2023/03/08
-//
+//  
+//  Created by TAISHIN MIYAMOTO on 2023/03/20
+//  
 //
 
 import Foundation
 import XcodeKit
 
-class ReviewCommand: NSObject, XCSourceEditorCommand {
+class RefactorCommand: NSObject, XCSourceEditorCommand {
     func perform(
         with invocation: XCSourceEditorCommandInvocation,
         completionHandler: @escaping (Error?) -> Void
@@ -51,7 +51,7 @@ class ReviewCommand: NSObject, XCSourceEditorCommand {
 
             let language = languageRepository.getSelectedLanguage()
 
-            let content = Prompt.review(code, language: language)
+            let content = Prompt.refactor(code, language: language)
 
             do {
                 let messageResult = try await ChatGPTClient.send(
