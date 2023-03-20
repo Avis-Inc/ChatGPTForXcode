@@ -98,3 +98,5 @@ BuildTools/.swiftpm
 BuildTools/Package.resolved
 
 *.swp
+
+*.xcodeproj
