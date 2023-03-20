@@ -1,5 +1,5 @@
 //
-//  SourceEditorCommand.swift
+//  ReviewCommand.swift
 //  ChatGPTForXcodeEditorExtension
 //
 //  Created by TAISHIN MIYAMOTO on 2023/03/08
@@ -10,7 +10,7 @@ import Foundation
 import XcodeKit
 
 
-class SourceEditorCommand: NSObject, XCSourceEditorCommand {
+class ReviewCommand: NSObject, XCSourceEditorCommand {
     func perform(
         with invocation: XCSourceEditorCommandInvocation,
         completionHandler: @escaping (Error?) -> Void
