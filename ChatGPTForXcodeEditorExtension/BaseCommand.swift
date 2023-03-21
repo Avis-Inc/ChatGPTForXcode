@@ -1,16 +1,15 @@
 //
-//  SourceEditorCommand.swift
+//  BaseCommand.swift
 //  ChatGPTForXcodeEditorExtension
 //
-//  Created by TAISHIN MIYAMOTO on 2023/03/08
+//  Created by TAISHIN MIYAMOTO on 2023/03/20
 //
 //
 
 import Foundation
 import XcodeKit
 
-
-class SourceEditorCommand: NSObject, XCSourceEditorCommand {
+class BaseCommand: NSObject, XCSourceEditorCommand {
     func perform(
         with invocation: XCSourceEditorCommandInvocation,
         completionHandler: @escaping (Error?) -> Void
@@ -25,7 +24,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             }
 
             let lines = (selection.start.line ... selection.end.line)
-                .filter({ $0 <  buffer.lines.count })
+                .filter { $0 < buffer.lines.count }
                 .compactMap { buffer.lines[$0] as? String }
 
             let code = lines.enumerated()
@@ -52,7 +51,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
 
             let language = languageRepository.getSelectedLanguage()
 
-            let content = Prompt.review(code, language: language)
+            let content = prompt(code, language: language)
 
             do {
                 let messageResult = try await ChatGPTClient.send(
@@ -60,7 +59,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                     chatMessages: [.init(role: .user, content: content)]
                 )
                 let indentSpace = String(repeating: " ", count: indentCount)
-                let markerComment = "\(indentSpace)// MARK: Code Review"
+                let markerComment = "\(indentSpace)// MARK: \(commandType.rawValue)"
                 var reviewComment = messageResult.choices.first?.message.content ?? ""
                 reviewComment = reviewComment
                     .split(separator: "\n")
@@ -74,5 +73,13 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
                 completionHandler(error)
             }
         }
+    }
+
+    var commandType: Command {
+        fatalError("`commandType` must be implemented in subclasses")
+    }
+
+    func prompt(_ code: String, language: Language) -> String {
+        fatalError("`prompt` must be implemented in subclasses")
     }
 }

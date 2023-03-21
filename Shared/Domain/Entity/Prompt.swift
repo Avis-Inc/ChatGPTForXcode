@@ -1,9 +1,9 @@
 //
 //  Prompt.swift
 //  ChatGPTForXcode
-//  
+//
 //  Created by TAISHIN MIYAMOTO on 2023/03/19
-//  
+//
 //
 
 import Foundation
@@ -30,6 +30,15 @@ public enum Prompt {
 
     static func refactor(_ code: String, language: Language) -> String {
         """
+        You are the Tech Lead Engineer for iOS.
+        Refactor the given code.
+        Please output the code and description after refactoring
+
+        ```
+        \(code)
+        ```
+
+        \(language.prompt)
         """
     }
 }
