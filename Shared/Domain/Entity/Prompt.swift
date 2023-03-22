@@ -11,20 +11,22 @@ import Foundation
 public enum Prompt {
     static func review(_ code: String, language: Language) -> String {
         """
-        You are the Tech Lead Engineer for iOS.
-        The output should meet the following constraints
-        - Keep sentences short.
-        - Limit the output to a maximum of three items.
-        - Format the output as a list.
-        - Don't mention if you're unsure of any issues.
-        - Output only "LGTM" if there are no issues.
-        - Indicate the specific area if there is an issue.
-
+        # decree: 
+        Please output the problems with the input code. However, the following constraints must be met.
+        
+        # constraint: 
+        - If anything is unclear, please do not list anything.
+        - If there is no problem, just output "LGTM
+        - If there are any problems, please specify the specific areas.
+        - Please keep sentences as short as possible and write a maximum of three items in list form.
+        - \(language.prompt)
+        
+        # input:
         ```
         \(code)
         ```
-
-        \(language.prompt)
+        
+        # output:
         """
     }
 
