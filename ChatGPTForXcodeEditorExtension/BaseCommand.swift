@@ -56,7 +56,10 @@ class BaseCommand: NSObject, XCSourceEditorCommand {
             do {
                 let messageResult = try await ChatGPTClient.send(
                     authToken: authToken,
-                    chatMessages: [.init(role: .user, content: content)]
+                    chatMessages: [
+                        .init(role: .system, content: "The assistant should act as the Tech Lead Engineer for iOS."),
+                        .init(role: .user, content: content)
+                    ]
                 )
                 let indentSpace = String(repeating: " ", count: indentCount)
                 let markerComment = "\(indentSpace)// MARK: \(commandType.rawValue)"
