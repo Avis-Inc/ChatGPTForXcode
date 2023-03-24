@@ -14,7 +14,9 @@ public struct LanguageRepository {
     private let userDefaults = UserDefaults(suiteName: "com.ChatGPTForXcode.UserDefaults")
 
     func getSelectedLanguage() -> Language {
-        let selectedLanguage = userDefaults?.string(forKey: key) ?? "English"
+        guard let selectedLanguage = userDefaults?.string(forKey: key) else {
+            return Language.english
+        }
         return Language(rawValue: selectedLanguage) ?? Language.english
     }
 
