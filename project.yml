@@ -133,6 +133,51 @@ targets:
       path: Shared
     type: xcode-extension
 
+  ChatGPTForXcodeTests:
+    dependencies:
+    - target: ChatGPTForXcode
+    - package: OpenAISwift
+      product: OpenAISwift
+    platform: macOS
+    settings:
+      configs:
+        Debug:
+          ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: 'YES'
+          ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+          CODE_SIGN_ENTITLEMENTS: ChatGPTForXcodeTests/ChatGPTForXcodeTests.entitlements
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          DEVELOPMENT_ASSET_PATHS: '"ChatGPTForXcode/Preview Content"'
+          ENABLE_HARDENED_RUNTIME: 'YES'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          INFOPLIST_FILE: ChatGPTForXcodeTests/Info.plist
+          INFOPLIST_KEY_NSHumanReadableCopyright: ''
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: com.Avis.ChatGPTForXcodeTests
+          SWIFT_EMIT_LOC_STRINGS: 'YES'
+          SWIFT_VERSION: '5.0'
+        Release:
+          ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: 'YES'
+          ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+          CODE_SIGN_ENTITLEMENTS: ChatGPTForXcodeTests/ChatGPTForXcodeTests.entitlements
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          DEVELOPMENT_ASSET_PATHS: '"ChatGPTForXcode/Preview Content"'
+          ENABLE_HARDENED_RUNTIME: 'YES'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          INFOPLIST_FILE: ChatGPTForXcodeTests/Info.plist
+          INFOPLIST_KEY_NSHumanReadableCopyright: ''
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: com.Avis.ChatGPTForXcodeTests
+          SWIFT_EMIT_LOC_STRINGS: 'YES'
+          SWIFT_VERSION: '5.0'
+    sources:
+    - name: ChatGPTForXcodeTests
+      path: ChatGPTForXcodeTests
+    - name: Shared
+      path: Shared
+    type: bundle.unit-test
+
 packages:
   OpenAISwift:
     url: https://github.com/adamrushy/OpenAISwift
