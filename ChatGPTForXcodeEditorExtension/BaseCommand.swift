@@ -8,6 +8,7 @@
 
 import Foundation
 import XcodeKit
+import AppKit
 
 class BaseCommand: NSObject, XCSourceEditorCommand {
     func perform(
@@ -71,6 +72,9 @@ class BaseCommand: NSObject, XCSourceEditorCommand {
                 let comments = [markerComment, reviewComment]
                 let result = comments.joined(separator: "\n")
                 buffer.lines.insert(result, at: selection.start.line)
+                if let url = URL(string: "chat-gpt-for-xcode://") {
+                     NSWorkspace.shared.open(url)
+                }
                 completionHandler(nil)
             } catch {
                 completionHandler(error)

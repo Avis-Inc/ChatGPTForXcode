@@ -10,10 +10,25 @@ import SwiftUI
 
 @main
 struct ChatGPTForXcodeApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
-        WindowGroup {
-            ConfigurationView()
+        // WindowGroup {
+        //     ConfigurationView()
+        // }
+        // .windowResizability(.contentSize)
+        
+        MenuBarExtra {
+            Button {
+                print("button tapped!")
+            } label: {
+                Text("Button")
+            }
+        } label: {
+            Image(systemName: "bubble.left.fill")
         }
-        .windowResizability(.contentSize)
+
     }
 }
+
+// chat-gpt-for-xcode://
