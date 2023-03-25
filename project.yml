@@ -77,6 +77,7 @@ targets:
     - name: Shared
       path: Shared
     type: application
+
   ChatGPTForXcodeEditorExtension:
     dependencies:
     - sdk: Library/Frameworks/XcodeKit.framework
@@ -132,6 +133,69 @@ targets:
     - name: Shared
       path: Shared
     type: xcode-extension
+
+  ChatGPTForXcodeTests:
+    platform: macOS
+    sources:
+    - path: ChatGPTForXcodeTests
+    - name: Shared
+      path: Shared
+    dependencies:
+    - target: ChatGPTForXcode
+    settings:
+      base:
+        CODE_SIGN_STYLE: Automatic
+        COMBINE_HIDPI_IMAGES: 'YES'
+        CURRENT_PROJECT_VERSION: '1'
+        ENABLE_HARDENED_RUNTIME: 'YES'
+        GENERATE_INFOPLIST_FILE: 'YES'
+        PRODUCT_BUNDLE_IDENTIFIER: com.Avis.ChatGPTForXcode.ChatGPTForXcodeTests
+    type: bundle.unit-test
+
+schemes:
+  ChatGPTForXcode:
+    build:
+      targets:
+        ChatGPTForXcode: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - ChatGPTForXcode
+      targets:
+        - name: ChatGPTForXcodeTests
+          parallelizable: true
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+
+  ChatGPTForXcodeEditorExtension:
+    build:
+      targets:
+        ChatGPTForXcodeEditorExtension: all
+    run:
+      config: Release
+    test:
+      config: Release
+      gatherCoverageData: true
+      coverageTargets:
+        - ChatGPTForXcodeEditorExtension
+      targets:
+        - name: ChatGPTForXcodeTests
+          parallelizable: true
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Release
+    archive:
+      config: Release
 
 packages:
   OpenAISwift:
