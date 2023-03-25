@@ -73,9 +73,8 @@ class BaseCommand: NSObject, XCSourceEditorCommand {
                 let result = comments.joined(separator: "\n")
                 buffer.lines.insert(result, at: selection.start.line)
                 
-                let encodedResult = result.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-                if let url = URL(string: "chat-gpt-for-xcode://chat?\(encodedResult)") {
-                    print("###", url)
+                let encodedComment = (messageResult.choices.first?.message.content ?? "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+                if let url = URL(string: "chat-gpt-for-xcode://chat?\(encodedComment)") {
                     NSWorkspace.shared.open(url)
                 }
                 
