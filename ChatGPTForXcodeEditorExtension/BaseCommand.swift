@@ -47,10 +47,14 @@ class BaseCommand: NSObject, XCSourceEditorCommand {
             let apiKeyRepository = APIKeyRepository()
 
             let languageRepository = LanguageRepository()
+            
+            let displayInFloatingWindowRepository = DisplayInFloatingWindowRepository()
 
             let authToken = apiKeyRepository.getAPIKey()
 
             let language = languageRepository.getSelectedLanguage()
+            
+            let displayInFloatingWindow = displayInFloatingWindowRepository.get()
 
             let content = prompt(code, language: language)
 
@@ -62,20 +66,23 @@ class BaseCommand: NSObject, XCSourceEditorCommand {
                         .init(role: .user, content: content)
                     ]
                 )
-                let indentSpace = String(repeating: " ", count: indentCount)
-                let markerComment = "\(indentSpace)// MARK: \(commandType.rawValue)"
-                var reviewComment = messageResult.choices.first?.message.content ?? ""
-                reviewComment = reviewComment
-                    .split(separator: "\n")
-                    .map { "\(indentSpace)/// \($0)" }
-                    .joined(separator: "\n")
-                let comments = [markerComment, reviewComment]
-                let result = comments.joined(separator: "\n")
-                buffer.lines.insert(result, at: selection.start.line)
                 
-                let encodedComment = (messageResult.choices.first?.message.content ?? "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-                if let url = URL(string: "chat-gpt-for-xcode://chat?\(encodedComment)") {
-                    NSWorkspace.shared.open(url)
+                if displayInFloatingWindow {
+                    let encodedComment = (messageResult.choices.first?.message.content ?? "").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+                    if let url = URL(string: "chat-gpt-for-xcode://chat?\(encodedComment)") {
+                        NSWorkspace.shared.open(url)
+                    }
+                } else {
+                    let indentSpace = String(repeating: " ", count: indentCount)
+                    let markerComment = "\(indentSpace)// MARK: \(commandType.rawValue)"
+                    var reviewComment = messageResult.choices.first?.message.content ?? ""
+                    reviewComment = reviewComment
+                        .split(separator: "\n")
+                        .map { "\(indentSpace)/// \($0)" }
+                        .joined(separator: "\n")
+                    let comments = [markerComment, reviewComment]
+                    let result = comments.joined(separator: "\n")
+                    buffer.lines.insert(result, at: selection.start.line)
                 }
                 
                 completionHandler(nil)
