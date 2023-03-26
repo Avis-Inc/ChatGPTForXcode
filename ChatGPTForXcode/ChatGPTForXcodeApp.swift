@@ -35,13 +35,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let view = ConfigurationView()
         let controller = NSHostingController(rootView: view)
         
-        let window = NSWindow(
+        let window = NSPanel(
             contentRect: .zero,
             styleMask: [
                 .closable,
                 .miniaturizable,
                 .titled,
-                .resizable
             ],
             backing: .buffered,
             defer: false)

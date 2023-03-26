@@ -18,7 +18,7 @@ struct ConfigurationView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 10) {
+            VStack(alignment: .leading, spacing: 10) {
                 headline("1. Obtain your API Key from OpenAI.")
 
                 link()
@@ -30,9 +30,14 @@ struct ConfigurationView: View {
                 headline("3. Specify the output language setting.")
 
                 languagePicker()
+                
+                Divider()
+                    .padding(.vertical, 4)
+                
+                floatingWindowToggle()
             }
             .padding(.init(top: 25, leading: 25, bottom: 25, trailing: 28))
-            .frame(width: 400, height: 230, alignment: .center)
+            .frame(width: 400, height: 300, alignment: .center)
             .onAppear {
                 apiKey = apiKeyRepository.getAPIKey()
                 selectedLanguage = languageRepository.getSelectedLanguage()
@@ -86,6 +91,15 @@ extension ConfigurationView {
         NSApplication.shared.orderFrontStandardAboutPanel(
             options: [NSApplication.AboutPanelOptionKey(rawValue: "Copyright"): "© 2023 Avis Inc"]
         )
+    }
+    
+    private func floatingWindowToggle() -> some View {
+        Toggle(isOn: .constant(true)) {
+            Text("Present suggestions in Floating Window")
+                .font(.system(size: 14))
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .toggleStyle(.switch)
     }
 }
 
