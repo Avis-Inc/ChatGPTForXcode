@@ -29,6 +29,24 @@ struct ChatGPTForXcodeApp: App {
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
+        openConfigurationView()
+    }
+    
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag {
+            openConfigurationView()
+        }
+        return true
+    }
+    
+    func application(_ application: NSApplication, open urls: [URL]) {
+        print(urls)
+        if let url = urls.first {
+            openChatPanel(url: url)
+        }
+    }
+    
+    private func openConfigurationView() {
         if NSApplication.shared.windows.filter({$0.identifier == .init("configurationWindow")}).first != nil {
             return
         }
@@ -50,13 +68,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.toolbar = .init()
         window.center()
         window.makeKeyAndOrderFront(nil)
-    }
-    
-    func application(_ application: NSApplication, open urls: [URL]) {
-        print(urls)
-        if let url = urls.first {
-            openChatPanel(url: url)
-        }
     }
     
     let chatViewModel = ChatViewModel()

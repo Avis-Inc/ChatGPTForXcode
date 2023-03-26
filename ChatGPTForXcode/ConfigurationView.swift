@@ -9,12 +9,12 @@ import SwiftUI
 
 struct ConfigurationView: View {
     private let apiKeyRepository = APIKeyRepository()
-
     private let languageRepository = LanguageRepository()
+    private let displayInFloatingWindowRepository = DisplayInFloatingWindowRepository()
 
     @State private var apiKey = ""
-
     @State private var selectedLanguage = Language.english
+    @State private var displayInFloatingWindow = false
 
     var body: some View {
         NavigationStack {
@@ -41,9 +41,11 @@ struct ConfigurationView: View {
             .onAppear {
                 apiKey = apiKeyRepository.getAPIKey()
                 selectedLanguage = languageRepository.getSelectedLanguage()
+                displayInFloatingWindow = displayInFloatingWindowRepository.get()
             }
             .onChange(of: apiKey, perform: apiKeyRepository.saveAPIKey(apiKey:))
             .onChange(of: selectedLanguage, perform: languageRepository.saveSelectedLanguage(language:))
+            .onChange(of: displayInFloatingWindow, perform: displayInFloatingWindowRepository.save)
             .navigationTitle("ChatGPT for Xcode")
             .toolbar {
                 toolbarButton()
@@ -94,7 +96,7 @@ extension ConfigurationView {
     }
     
     private func floatingWindowToggle() -> some View {
-        Toggle(isOn: .constant(true)) {
+        Toggle(isOn: $displayInFloatingWindow) {
             Text("Present suggestions in Floating Window")
                 .font(.system(size: 14))
                 .frame(maxWidth: .infinity, alignment: .leading)
