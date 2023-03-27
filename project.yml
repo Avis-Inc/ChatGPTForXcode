@@ -1,0 +1,203 @@
+attributes:
+  BuildIndependentTargetsInParallel: '1'
+  LastSwiftUpdateCheck: '1420'
+  LastUpgradeCheck: '1420'
+
+configs:
+  Debug: debug
+  Release: release
+
+name: ChatGPTForXcode
+
+options:
+  defaultConfig: Release
+  groupSortPosition: bottom
+  transitivelyLinkDependencies: false
+
+settings:
+  configs:
+    Debug:
+      CLANG_CXX_LANGUAGE_STANDARD: gnu++20
+      MACOSX_DEPLOYMENT_TARGET: '13.1'
+      MTL_ENABLE_DEBUG_INFO: INCLUDE_SOURCE
+      MTL_FAST_MATH: 'YES'
+      SDKROOT: macosx
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+      SWIFT_OPTIMIZATION_LEVEL: -Onone
+    Release:
+      CLANG_CXX_LANGUAGE_STANDARD: gnu++20
+      MACOSX_DEPLOYMENT_TARGET: '13.1'
+      MTL_FAST_MATH: 'YES'
+      SDKROOT: macosx
+      SWIFT_COMPILATION_MODE: wholemodule
+      SWIFT_OPTIMIZATION_LEVEL: -O
+
+targets:
+  ChatGPTForXcode:
+    dependencies:
+    - target: ChatGPTForXcodeEditorExtension
+    - package: OpenAISwift
+      product: OpenAISwift
+    platform: macOS
+    settings:
+      configs:
+        Debug:
+          ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: 'YES'
+          ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+          CODE_SIGN_ENTITLEMENTS: ChatGPTForXcode/ChatGPTForXcode.entitlements
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          DEVELOPMENT_ASSET_PATHS: '"ChatGPTForXcode/Preview Content"'
+          ENABLE_HARDENED_RUNTIME: 'YES'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          INFOPLIST_FILE: ChatGPTForXcode/Info.plist
+          INFOPLIST_KEY_NSHumanReadableCopyright: ''
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: com.Avis.ChatGPTForXcode
+          SWIFT_EMIT_LOC_STRINGS: 'YES'
+          SWIFT_VERSION: '5.0'
+        Release:
+          ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: 'YES'
+          ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+          CODE_SIGN_ENTITLEMENTS: ChatGPTForXcode/ChatGPTForXcode.entitlements
+          CODE_SIGN_STYLE: Automatic
+          CURRENT_PROJECT_VERSION: '1'
+          DEVELOPMENT_ASSET_PATHS: '"ChatGPTForXcode/Preview Content"'
+          ENABLE_HARDENED_RUNTIME: 'YES'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          INFOPLIST_FILE: ChatGPTForXcode/Info.plist
+          INFOPLIST_KEY_NSHumanReadableCopyright: ''
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: com.Avis.ChatGPTForXcode
+          SWIFT_EMIT_LOC_STRINGS: 'YES'
+          SWIFT_VERSION: '5.0'
+    sources:
+    - name: ChatGPTForXcode
+      path: ChatGPTForXcode
+    - name: Shared
+      path: Shared
+    type: application
+
+  ChatGPTForXcodeEditorExtension:
+    dependencies:
+    - sdk: Library/Frameworks/XcodeKit.framework
+      embed: true
+      root: DEVELOPER_DIR
+    - sdk: Cocoa.framework
+    - package: OpenAISwift
+      product: OpenAISwift
+    platform: macOS
+    settings:
+      configs:
+        Debug:
+          CODE_SIGN_ENTITLEMENTS: ChatGPTForXcodeEditorExtension/ChatGPTForXcodeEditorExtension.entitlements
+          CODE_SIGN_STYLE: Automatic
+          COMBINE_HIDPI_IMAGES: 'YES'
+          CURRENT_PROJECT_VERSION: '1'
+          ENABLE_HARDENED_RUNTIME: 'YES'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          INFOPLIST_FILE: ChatGPTForXcodeEditorExtension/Info.plist
+          INFOPLIST_KEY_CFBundleDisplayName: ChatGPTForXcodeEditorExtension
+          INFOPLIST_KEY_NSHumanReadableCopyright: ''
+          LD_RUNPATH_SEARCH_PATHS:
+          - $(inherited)
+          - '@executable_path/../Frameworks'
+          - '@executable_path/../../../../Frameworks'
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: com.Avis.ChatGPTForXcode.ChatGPTForXcodeEditorExtension
+          SKIP_INSTALL: 'YES'
+          SWIFT_EMIT_LOC_STRINGS: 'YES'
+          SWIFT_VERSION: '5.0'
+        Release:
+          CODE_SIGN_ENTITLEMENTS: ChatGPTForXcodeEditorExtension/ChatGPTForXcodeEditorExtension.entitlements
+          CODE_SIGN_STYLE: Automatic
+          COMBINE_HIDPI_IMAGES: 'YES'
+          CURRENT_PROJECT_VERSION: '1'
+          ENABLE_HARDENED_RUNTIME: 'YES'
+          GENERATE_INFOPLIST_FILE: 'YES'
+          INFOPLIST_FILE: ChatGPTForXcodeEditorExtension/Info.plist
+          INFOPLIST_KEY_CFBundleDisplayName: ChatGPTForXcodeEditorExtension
+          INFOPLIST_KEY_NSHumanReadableCopyright: ''
+          LD_RUNPATH_SEARCH_PATHS:
+          - $(inherited)
+          - '@executable_path/../Frameworks'
+          - '@executable_path/../../../../Frameworks'
+          MARKETING_VERSION: '1.0'
+          PRODUCT_BUNDLE_IDENTIFIER: com.Avis.ChatGPTForXcode.ChatGPTForXcodeEditorExtension
+          SKIP_INSTALL: 'YES'
+          SWIFT_EMIT_LOC_STRINGS: 'YES'
+          SWIFT_VERSION: '5.0'
+    sources:
+    - name: ChatGPTForXcodeEditorExtension
+      path: ChatGPTForXcodeEditorExtension
+    - name: Shared
+      path: Shared
+    type: xcode-extension
+
+  ChatGPTForXcodeTests:
+    platform: macOS
+    sources:
+    - path: ChatGPTForXcodeTests
+    - name: Shared
+      path: Shared
+    dependencies:
+    - target: ChatGPTForXcode
+    settings:
+      base:
+        CODE_SIGN_STYLE: Automatic
+        COMBINE_HIDPI_IMAGES: 'YES'
+        CURRENT_PROJECT_VERSION: '1'
+        ENABLE_HARDENED_RUNTIME: 'YES'
+        GENERATE_INFOPLIST_FILE: 'YES'
+        PRODUCT_BUNDLE_IDENTIFIER: com.Avis.ChatGPTForXcode.ChatGPTForXcodeTests
+    type: bundle.unit-test
+
+schemes:
+  ChatGPTForXcode:
+    build:
+      targets:
+        ChatGPTForXcode: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - ChatGPTForXcode
+      targets:
+        - name: ChatGPTForXcodeTests
+          parallelizable: true
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+
+  ChatGPTForXcodeEditorExtension:
+    build:
+      targets:
+        ChatGPTForXcodeEditorExtension: all
+    run:
+      config: Release
+    test:
+      config: Release
+      gatherCoverageData: true
+      coverageTargets:
+        - ChatGPTForXcodeEditorExtension
+      targets:
+        - name: ChatGPTForXcodeTests
+          parallelizable: true
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Release
+    archive:
+      config: Release
+
+packages:
+  OpenAISwift:
+    url: https://github.com/adamrushy/OpenAISwift
+    from: 1.0.0
