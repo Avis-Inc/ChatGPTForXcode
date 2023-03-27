@@ -9,16 +9,16 @@ import SwiftUI
 
 struct ConfigurationView: View {
     private let apiKeyRepository = APIKeyRepository()
-
     private let languageRepository = LanguageRepository()
+    private let displayInFloatingWindowRepository = DisplayInFloatingWindowRepository()
 
     @State private var apiKey = ""
-
     @State private var selectedLanguage = Language.english
+    @State private var displayInFloatingWindow = false
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 10) {
+            VStack(alignment: .leading, spacing: 10) {
                 headline("1. Obtain your API Key from OpenAI.")
 
                 link()
@@ -30,15 +30,22 @@ struct ConfigurationView: View {
                 headline("3. Specify the output language setting.")
 
                 languagePicker()
+                
+                Divider()
+                    .padding(.vertical, 4)
+                
+                floatingWindowToggle()
             }
             .padding(.init(top: 25, leading: 25, bottom: 25, trailing: 28))
-            .frame(width: 400, height: 230, alignment: .center)
+            .frame(width: 400, height: 300, alignment: .center)
             .onAppear {
                 apiKey = apiKeyRepository.getAPIKey()
                 selectedLanguage = languageRepository.getSelectedLanguage()
+                displayInFloatingWindow = displayInFloatingWindowRepository.get()
             }
             .onChange(of: apiKey, perform: apiKeyRepository.saveAPIKey(apiKey:))
             .onChange(of: selectedLanguage, perform: languageRepository.saveSelectedLanguage(language:))
+            .onChange(of: displayInFloatingWindow, perform: displayInFloatingWindowRepository.save)
             .navigationTitle("ChatGPT for Xcode")
             .toolbar {
                 toolbarButton()
@@ -86,6 +93,15 @@ extension ConfigurationView {
         NSApplication.shared.orderFrontStandardAboutPanel(
             options: [NSApplication.AboutPanelOptionKey(rawValue: "Copyright"): "© 2023 Avis Inc"]
         )
+    }
+    
+    private func floatingWindowToggle() -> some View {
+        Toggle(isOn: $displayInFloatingWindow) {
+            Text("Present suggestions in Floating Window")
+                .font(.system(size: 14))
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .toggleStyle(.switch)
     }
 }
 

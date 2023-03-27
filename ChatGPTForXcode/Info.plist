@@ -2,7 +2,18 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>IDEDidComputeMac32BitWarning</key>
-    <true/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>chat-gpt-for-xcode</string>
+			</array>
+		</dict>
+	</array>
+	<key>IDEDidComputeMac32BitWarning</key>
+	<true/>
 </dict>
 </plist>
